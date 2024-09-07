@@ -77,7 +77,9 @@
         .right-section p {
     margin-bottom: 20px; /* 将段落之间的间距设置为20px */
 }
-        @media (max-width: 768px) {
+        
+       /* 为小屏幕设备进行优化 */
+@media (max-width: 768px) {
     header {
         flex-direction: column; /* 将导航栏和名字堆叠起来 */
         align-items: flex-start; /* 左对齐 */
@@ -100,16 +102,23 @@
         padding: 20px;
     }
 
+    /* 保持图片左对齐 */
+    .left-section {
+        text-align: left; /* 改为左对齐 */
+    }
+
     .left-section img {
         width: 100%; /* 图片自适应手机屏幕宽度 */
         max-width: 250px; /* 最大宽度限制为250px */
     }
 
+    /* 右侧内容保持左对齐 */
     .right-section {
         padding-left: 0;
-        text-align: center; /* 在手机上将文本居中对齐 */
+        text-align: left; /* 改为左对齐，手机上不再居中 */
     }
 
+    /* 调整 about 的标题和段落文字的尺寸 */
     .right-section h1 {
         font-size: 2em; /* 缩小标题文字 */
     }
@@ -118,6 +127,11 @@
         font-size: 1em; /* 缩小段落文字 */
     }
 
+    /* 保持 news 部分居中对齐 */
+    .news-section {
+        text-align: center; /* 确保 news 部分居中显示 */
+    }
+    
         .news-section {
             padding: 50px;
             background-color: #111;
