@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Your Name</title>
+    <title>CV - Yuelu (Niko) Li</title>
     <style>
         body {
             margin: 0;
@@ -15,7 +15,7 @@
 
         iframe {
             width: 100%;
-            height: 100vh; /* 让 PDF 填满页面高度 */
+            height: 100vh; /* 让 iframe 填满视窗高度 */
             border: none;
         }
 
@@ -30,12 +30,19 @@
         .back-link:hover {
             text-decoration: underline;
         }
+
+        /* 针对小屏幕的调整 */
+        @media (max-width: 768px) {
+            iframe {
+                height: 90vh; /* 为小屏幕调整高度，保留一些顶部空间 */
+            }
+        }
     </style>
 </head>
 <body>
-    <a class="back-link" href="index.html">← Back to Home</a> <!-- 返回首页的链接 -->
+    <a class="back-link" href="index.html">← Back to Home</a>
 
-    <iframe src="yueluli-cv.pdf"></iframe> <!-- 替换为你的 CV 文件路径 -->
+    <iframe src="yueluli-cv.pdf"></iframe> <!-- 将 "your-cv.pdf" 替换为实际的 PDF 文件路径 -->
 
 </body>
 </html>
