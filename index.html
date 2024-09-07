@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuelu(Niko)Li</title>
@@ -76,6 +77,46 @@
         .right-section p {
     margin-bottom: 20px; /* 将段落之间的间距设置为20px */
 }
+        @media (max-width: 768px) {
+    header {
+        flex-direction: column; /* 将导航栏和名字堆叠起来 */
+        align-items: flex-start; /* 左对齐 */
+        padding: 10px;
+    }
+
+    .header-right {
+        margin-top: 10px;
+        justify-content: flex-start;
+        flex-wrap: wrap; /* 导航栏在小屏幕上可以换行 */
+    }
+
+    .header-right a {
+        margin-right: 10px;
+        font-size: 1.1em; /* 缩小导航文字大小 */
+    }
+
+    .container {
+        flex-direction: column; /* 将图片和文本垂直排列 */
+        padding: 20px;
+    }
+
+    .left-section img {
+        width: 100%; /* 图片自适应手机屏幕宽度 */
+        max-width: 250px; /* 最大宽度限制为250px */
+    }
+
+    .right-section {
+        padding-left: 0;
+        text-align: center; /* 在手机上将文本居中对齐 */
+    }
+
+    .right-section h1 {
+        font-size: 2em; /* 缩小标题文字 */
+    }
+
+    .right-section p {
+        font-size: 1em; /* 缩小段落文字 */
+    }
 
         .news-section {
             padding: 50px;
