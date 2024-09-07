@@ -12,13 +12,47 @@
             color: #fff;
         }
 
-        header {
-            background-color: #000;
+    header {
+            display: flex;
+            justify-content: space-between; /* 左右分布 */
+            align-items: center; /* 垂直居中 */
             padding: 20px;
-            text-align: center;
-            font-size: 2em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000; /* 背景颜色 */
+            z-index: 100; /* 保证在最上层 */
+        }
+
+        /* 左侧名字的样式 */
+        .header-left {
+            font-size: 1.8em;
             font-weight: bold;
-            color: #fff;
+            color: #fff; /* 字体颜色 */
+            margin-left: 20px; /* 左边距 */
+        }
+
+        /* 右侧导航栏的样式 */
+        .header-right {
+            display: flex;
+            gap: 20px; /* 控制导航链接之间的间距 */
+            margin-right: 20px; /* 右边距 */
+        }
+
+        .header-right a {
+            color: #fff; /* 链接字体颜色 */
+            text-decoration: none; /* 去掉下划线 */
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .header-right a:hover {
+            color: #00bcd4; /* 鼠标悬停时链接颜色 */
+        }
+
+        /* 为页面内容留出空间，避免被 header 遮挡 */
+        .container {
+            padding-top: 80px; /* 留出空间 */
         }
 
         nav {
@@ -72,6 +106,10 @@
             font-size: 1.2em;
             line-height: 1.6;
         }
+
+        .right-section p {
+    margin-bottom: 20px; /* 将段落之间的间距设置为20px */
+}
 
         .news-section {
             padding: 50px;
@@ -135,14 +173,16 @@ a:hover {
 </head>
 <body>
     <header>
-        Yuelu(Niko) Li
+  <header>
+        <div class="header-left">
+            Yuelu (Niko) Li
+        </div>
+        <nav class="header-right">
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="cv.html">CV</a>
+        </nav>
     </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="cv.html">CV</a>
-    </nav>
 
     <div class="container" id="about">
         <div class="left-section">
@@ -150,9 +190,11 @@ a:hover {
         </div>
         <div class="right-section">
             <h1>About Me</h1>
-            <p>
-               Yuelu Li graduated from Yonsei University in South Korea with a major in Media Communication and is currently pursuing an MPhil in Computational Media and Arts at the Hong Kong University of Science and Technology (Guangzhou). She is currently a member of the <a href="https://cat.hkust-gz.edu.cn/" target="_blank">Creative Art Tech (CAT) team</a>, under the supervision of <a href="https://www.daveyip.com/" target="_blank">Professor David Kei Man YIP</a> and co-supervision of <a href="https://cma.hkust-gz.edu.cn/people/luwen-yu/" target="_blank">Professor Luwen Yu</a>. Her research area is Human-centered technology for storytelling including interactive storytelling, transmedia storytelling, and AIGC.
-            </p>
+            <p>I am an MPhil student in Computational Media and Arts at the Hong Kong University of Science and Technology (Guangzhou), where I am a member of the <a href="https://cat.hkust-gz.edu.cn/" target="_blank">Creative Art Tech (CAT) team</a>. I am supervised by <a href="https://www.daveyip.com/" target="_blank">Professor David Kei Man YIP</a> and co-supervised by <a href="https://cma.hkust-gz.edu.cn/people/luwen-yu/" target="_blank">Professor Luwen Yu</a>.</p>
+
+            <p>My research focuses on human-centered technology for storytelling, with a particular emphasis on interactive storytelling, transmedia storytelling, and AI-generated content (AIGC). I am interested in how AI agents can be integrated into the storytelling process to assist creators in building narratives that engage audiences while maintaining creative control.</p>
+
+            <p>I graduated from Yonsei University in South Korea with a Bachelor’s degree in Media Communication. Throughout my academic career, I have been passionate about exploring the intersection of technology and narrative, particularly how emerging technologies like AI can transform the ways stories are told across various platforms.</p>
         </div>
     </div>
 
