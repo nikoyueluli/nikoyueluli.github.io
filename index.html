@@ -3,86 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title>Your Name</title>
     <style>
         body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
             background-color: #000;
             color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
+            background-color: #000;
             padding: 20px;
-            background-color: #111;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
         }
 
-        header a {
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 10px 0;
+        }
+
+        nav a {
             color: #fff;
             text-decoration: none;
             margin: 0 15px;
-            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
         }
 
         .container {
-            padding-top: 80px;
-            padding: 20px;
-        }
-
-        .about-section {
             display: flex;
+            padding: 50px;
             justify-content: space-between;
-            align-items: flex-start;
         }
 
-        .about-section img {
-            max-width: 250px;
-            border-radius: 10px;
+        .left-section {
+            flex: 1;
+            text-align: center;
         }
 
-        .about-text {
-            max-width: 60%;
+        .left-section img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+        }
+
+        .right-section {
+            flex: 2;
+            padding-left: 50px;
+        }
+
+        .right-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .right-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
         }
 
         .news-section {
-            margin-top: 50px;
+            padding: 50px;
+            background-color: #111;
+        }
+
+        .news-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .news-item {
             margin-bottom: 20px;
+            font-size: 1.2em;
+            text-align: center;
         }
 
         footer {
+            background-color: #111;
+            color: #fff;
             text-align: center;
             padding: 20px;
-            background-color: #111;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
         }
 
         footer a {
-            color: #fff;
+            color: #00bcd4;
             text-decoration: none;
         }
 
-        .publications-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .publications-section ul li {
-            margin: 10px 0;
-        }
-
-        .cv-section iframe {
+        iframe {
             width: 100%;
             height: 800px;
         }
@@ -91,50 +111,58 @@
 </head>
 <body>
     <header>
-        <div>
-            <a href="#about">About</a>
-            <a href="#publications">Publications</a>
-            <a href="#cv">CV</a>
-        </div>
+        Your Name
     </header>
 
-    <div class="container">
-        <section id="about" class="about-section">
+    <nav>
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+    </nav>
+
+    <div class="container" id="about">
+        <div class="left-section">
             <img src="your-photo.jpg" alt="Your Photo">
-            <div class="about-text">
-                <h1>About Me</h1>
-                <p>This is where your personal introduction goes. You can write about your background, research interests, and more.</p>
-            </div>
-        </section>
+        </div>
+        <div class="right-section">
+            <h1>About Me</h1>
+            <p>
+                This is where your introduction goes. You can talk about your background, research interests, and anything you'd like others to know.
+            </p>
+        </div>
+    </div>
 
-        <section class="news-section">
-            <h2>News</h2>
-            <div class="news-item">
-                <p><strong>News Title 1</strong> - Short description of recent news or updates.</p>
-            </div>
-            <div class="news-item">
-                <p><strong>News Title 2</strong> - Another update or information about your work.</p>
-            </div>
-            <!-- Add more news items here -->
-        </section>
+    <div class="news-section">
+        <h2>News</h2>
+        <div class="news-item">
+            <strong>News Title 1:</strong> Short description of recent updates or news.
+        </div>
+        <div class="news-item">
+            <strong>News Title 2:</strong> Another update or information about your work.
+        </div>
+        <!-- Add more news items as needed -->
+    </div>
 
-        <section id="publications" class="publications-section">
-            <h2>Publications</h2>
+    <div class="container" id="publications">
+        <div class="right-section">
+            <h1>Publications</h1>
             <ul>
                 <li>Publication 1 - <em>Journal Name, Year</em></li>
                 <li>Publication 2 - <em>Journal Name, Year</em></li>
                 <!-- Add more publications here -->
             </ul>
-        </section>
+        </div>
+    </div>
 
-        <section id="cv" class="cv-section">
-            <h2>CV</h2>
-            <iframe src="your-cv.pdf"></iframe>
-        </section>
+    <div class="container" id="cv">
+        <h1>CV</h1>
+        <iframe src="your-cv.pdf"></iframe>
     </div>
 
     <footer>
-        <a href="mailto:your-email@example.com">your-email@example.com</a>
+        <p>
+            <a href="mailto:your-email@example.com">Contact Me</a>
+        </p>
     </footer>
 </body>
 </html>
