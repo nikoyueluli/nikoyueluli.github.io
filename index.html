@@ -3,7 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuelu(Niko)Li</title>
     <style>
         body {
@@ -13,7 +12,7 @@
             color: #fff;
         }
 
-    header {
+        header {
             background-color: #000;
             padding: 20px;
             text-align: center;
@@ -53,15 +52,16 @@
         }
 
         .left-section img {
-    width: 400px; /* 放大图片宽度 */
-    height: auto; /* 使高度自动调整，保持比例 */
-    border-radius: 0; /* 去掉圆角效果 */
-    border: 5px solid #fff; /* 保留白色边框 */
-}
+            width: 400px;
+            height: auto;
+            border-radius: 0;
+            border: 5px solid #fff;
+        }
 
         .right-section {
             flex: 2;
             padding-left: 50px;
+            text-align: left;
         }
 
         .right-section h1 {
@@ -72,61 +72,9 @@
         .right-section p {
             font-size: 1.2em;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        .right-section p {
-    margin-bottom: 20px; /* 将段落之间的间距设置为20px */
-}
-        
-       /* 为小屏幕设备进行优化 */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* 将导航栏和名字堆叠起来 */
-        align-items: flex-start; /* 左对齐 */
-        padding: 10px;
-    }
-
-    .header-right {
-        margin-top: 10px;
-        justify-content: flex-start;
-        flex-wrap: wrap; /* 导航栏在小屏幕上可以换行 */
-    }
-
-    .header-right a {
-        margin-right: 10px;
-        font-size: 1.1em; /* 缩小导航文字大小 */
-    }
-
-    .container {
-        flex-direction: column; /* 将图片和文本垂直排列 */
-        padding: 20px;
-    }
-
-    /* 保持图片左对齐 */
-    .left-section {
-        text-align: left; /* 改为左对齐 */
-    }
-
-    .left-section img {
-        width: 100%; /* 图片自适应手机屏幕宽度 */
-        max-width: 250px; /* 最大宽度限制为250px */
-    }
-
-    /* 右侧内容保持左对齐 */
-    .right-section {
-        padding-left: 0;
-        text-align: left; /* 改为左对齐，手机上不再居中 */
-    }
-
-    /* 调整 about 的标题和段落文字的尺寸 */
-    .right-section h1 {
-        font-size: 2em; /* 缩小标题文字 */
-    }
-
-    .right-section p {
-        font-size: 1em; /* 缩小段落文字 */
-    }
-    
         .news-section {
             padding: 50px;
             background-color: #111;
@@ -143,30 +91,29 @@
             font-size: 1.2em;
             text-align: center;
         }
-        
+
         .news-item p {
-    margin: 5px 0 20px 0; /* 为描述文本添加上下间距 */
-    font-size: 1em; /* 确保字体大小合适 */
+            margin: 5px 0 20px 0;
+            font-size: 1em;
         }
 
         .publications-section ul li {
-    margin-bottom: 40px; /* 增加 publication 项目之间的间隔 */
-    font-size: 1.2em; /* 设置字体大小 */
-}
-        
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
         a {
-    color: #00bcd4; /* 设置链接颜色 */
-    text-decoration: none; /* 去掉下划线 */
-}
-        
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
         .name-highlight {
-    color: #00bcd4; /* 设置名字的颜色为 #00bcd4 */
-}
+            color: #00bcd4;
+        }
 
-
-a:hover {
-    text-decoration: underline; /* 鼠标悬停时显示下划线 */
-}
+        a:hover {
+            text-decoration: underline;
+        }
 
         footer {
             background-color: #111;
@@ -185,10 +132,60 @@ a:hover {
             height: 800px;
         }
 
+        /* 为小屏幕设备进行优化 */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .header-right {
+                margin-top: 10px;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .header-right a {
+                margin-right: 10px;
+                font-size: 1.1em;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .left-section {
+                text-align: left;
+            }
+
+            .left-section img {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .right-section {
+                padding-left: 0;
+                text-align: left;
+            }
+
+            .right-section h1 {
+                font-size: 2em;
+            }
+
+            .right-section p {
+                font-size: 1em;
+            }
+
+            .news-section {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
- <header>
+    <header>
         Yuelu (Niko) Li
     </header>
 
@@ -215,23 +212,21 @@ a:hover {
     <div class="news-section">
         <h2>News</h2>
         <div class="news-item">
-            <strong>Bridging Audience and Creator: AI- Assisted Insights for Enhanced Interactive Narrative Design:</strong>
+            <strong>Bridging Audience and Creator: AI-Assisted Insights for Enhanced Interactive Narrative Design:</strong>
             <p>In Submission to the 2025 Conference on Computer Supported Cooperative Work and Social Computing (CSCW '25).</p>
         </div>
         <div class="news-item">
             <strong>At the Peak: Guidelines for Creating Climaxes in Data Videos:</strong>
             <p>Under Review in the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25).</p>
         </div>
-        <!-- Add more news items as needed -->
     </div>
 
     <div class="container" id="publications">
         <div class="right-section">
             <h1>Publications</h1>
             <ul>
-                <li>Ka-Yan Fung, Lik-Hang Lee, Huamin Qu, <strong class="name-highlight">Yuelu Li</strong>, Shenhui Song, David Kei Man Yip (2024), Create-to-learn paradigm: A proxy visual storytelling tool for stimulating children’s story sense and structure: <em>JAccepted to the 16th International Symposium on Visual Information Communication and Interaction (VINCI '24).</em></li>
-                <li><strong class="name-highlight">Yuelu Li</strong>, Junrong Song, Chaozhe Zhang, Rongrong Chen, David Kei Man Yip (2024), Comparing the different approaches of LLM with multi-agents to character decision in the Oscar winning Best Picture ‘The Departed’: <em>Accepted to the International Conference of Art Design and Technology (ICADT '24).</em></li>
-                <!-- Add more publications here -->
+                <li>Ka-Yan Fung, Lik-Hang Lee, Huamin Qu, <strong class="name-highlight">Yuelu Li</strong>, Shenhui Song, David Kei Man Yip (2024), Create-to-learn paradigm: A proxy visual storytelling tool for stimulating children’s story sense and structure: <em>Accepted to the 16th International Symposium on Visual Information Communication and Interaction (VINCI '24).</em></li>
+                <li><strong class="name-highlight">Yuelu Li</strong>, Junrong Song, Chaozhe Zhang, Rongrong Chen, David Kei Man Yip (2024), Comparing the different approaches of LLM with multi-agents to character decision in the Oscar-winning Best Picture ‘The Departed’: <em>Accepted to the International Conference of Art Design and Technology (ICADT '24).</em></li>
             </ul>
         </div>
     </div>
