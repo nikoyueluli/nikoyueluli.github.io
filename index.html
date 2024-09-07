@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #111;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding-top: 80px;
+            padding: 20px;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .about-section img {
+            max-width: 250px;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            max-width: 60%;
+        }
+
+        .news-section {
+            margin-top: 50px;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .publications-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .publications-section ul li {
+            margin: 10px 0;
+        }
+
+        .cv-section iframe {
+            width: 100%;
+            height: 800px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#cv">CV</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about-section">
+            <img src="your-photo.jpg" alt="Your Photo">
+            <div class="about-text">
+                <h1>About Me</h1>
+                <p>This is where your personal introduction goes. You can write about your background, research interests, and more.</p>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <h2>News</h2>
+            <div class="news-item">
+                <p><strong>News Title 1</strong> - Short description of recent news or updates.</p>
+            </div>
+            <div class="news-item">
+                <p><strong>News Title 2</strong> - Another update or information about your work.</p>
+            </div>
+            <!-- Add more news items here -->
+        </section>
+
+        <section id="publications" class="publications-section">
+            <h2>Publications</h2>
+            <ul>
+                <li>Publication 1 - <em>Journal Name, Year</em></li>
+                <li>Publication 2 - <em>Journal Name, Year</em></li>
+                <!-- Add more publications here -->
+            </ul>
+        </section>
+
+        <section id="cv" class="cv-section">
+            <h2>CV</h2>
+            <iframe src="your-cv.pdf"></iframe>
+        </section>
+    </div>
+
+    <footer>
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+    </footer>
+</body>
+</html>
