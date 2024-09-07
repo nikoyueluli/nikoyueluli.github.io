@@ -15,7 +15,7 @@
 
         iframe {
             width: 100%;
-            height: 100vh; /* 让 iframe 填满视窗高度 */
+            height: 95vh; /* 调整高度为95vh */
             border: none;
         }
 
@@ -33,8 +33,13 @@
 
         /* 针对小屏幕的调整 */
         @media (max-width: 768px) {
+            .back-link {
+                font-size: 1em;
+                margin: 10px 0; /* 缩小返回链接的间距 */
+            }
+
             iframe {
-                height: 90vh; /* 为小屏幕调整高度，保留一些顶部空间 */
+                height: 85vh; /* 为小屏幕调整高度，确保有更多顶部空间 */
             }
         }
     </style>
