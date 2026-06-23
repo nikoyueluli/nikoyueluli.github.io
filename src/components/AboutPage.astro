@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { copy, education, profile, type Lang } from '../data/site';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = copy[lang];
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+---
+
+<BaseLayout lang={lang} page="about" title={t.aboutTitle}>
+  <section class="page-hero shell">
+    <p class="kicker">01 / {lang === 'en' ? 'Profile' : '个人介绍'}</p>
+    <div class="page-title-grid"><h1>{t.aboutTitle}</h1><p>{t.aboutIntro}</p></div>
+  </section>
+  <section class="about-grid shell">
+    <div class="about-portrait"><img src={`${base}images/yuelu-li.jpg`} alt={lang === 'en' ? 'Portrait of Yuelu Li' : '李玥璐个人照片'} /></div>
+    <div class="about-copy">
+      <p class="lead-bio">{t.bio}</p>
+      <div class="advisor-list">
+        {profile.advisors.map((advisor) => (
+          <div><span>{advisor.role[lang]}</span><a href={advisor.url} target="_blank" rel="noreferrer">{advisor.name} ↗</a></div>
+        ))}
+      </div>
+      <div class="interests"><h2>{t.researchInterests}</h2><div>{t.interests.map((interest) => <span>{interest}</span>)}</div></div>
+    </div>
+  </section>
+  <section class="education-section shell">
+    <div class="section-heading"><div><p class="kicker">02 / {lang === 'en' ? 'Background' : '背景'}</p><h2>{t.education}</h2></div></div>
+    <div class="timeline">
+      {education.map((item) => (
+        <article><p class="timeline-period">{item.period[lang]}</p><div><h3>{item.degree[lang]}</h3><p>{item.school[lang]}</p><span>{item.detail[lang]}</span></div></article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

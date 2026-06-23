@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { copy, type Lang } from '../data/site';
+import { projects } from '../data/projects';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = copy[lang];
+---
+
+<BaseLayout lang={lang} page="projects" title={t.projectsTitle}>
+  <section class="page-hero shell">
+    <p class="kicker">01 / {lang === 'en' ? 'Creative practice' : '创意实践'}</p>
+    <div class="page-title-grid"><h1>{t.projectsTitle}</h1><p>{t.projectsIntro}</p></div>
+  </section>
+  <section class="projects-list shell">
+    {projects.map((project, index) => (
+      <article class="project-card">
+        <div class="project-visual" aria-hidden="true"><div class="star-orbit"></div><span>{String(index + 1).padStart(2, '0')}</span><p>DREAMING<br />THE STARS</p></div>
+        <div class="project-content">
+          <p class="publication-meta">{project.year} · {project.medium[lang]}</p>
+          <h2>{project.title[lang]}</h2>
+          <p class="project-collaborators">{project.collaborators[lang]}</p>
+          <p>{project.description[lang]}</p>
+          <p class="project-exhibition">{project.exhibition[lang]}</p>
+          <a class="button button-dark" href={project.url} target="_blank" rel="noreferrer">{t.projectLink}<span>↗</span></a>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

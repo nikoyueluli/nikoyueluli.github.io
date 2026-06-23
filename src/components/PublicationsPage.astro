@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationsList from './PublicationsList.astro';
+import { copy, profile, type Lang } from '../data/site';
+import { publications } from '../data/publications';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = copy[lang];
+---
+
+<BaseLayout lang={lang} page="publications" title={t.allPublications}>
+  <section class="page-hero shell publication-hero">
+    <p class="kicker">01 / {lang === 'en' ? 'Research output' : '研究成果'}</p>
+    <div class="page-title-grid"><h1>{t.allPublications}</h1><p>{t.publicationsIntro}</p></div>
+    <a class="scholar-pill" href={profile.scholar} target="_blank" rel="noreferrer">Google Scholar <span>↗</span></a>
+  </section>
+  <section class="shell publication-page-list"><PublicationsList publications={publications} lang={lang} /></section>
+</BaseLayout>

@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationsList from './PublicationsList.astro';
+import { copy, profile, type Lang } from '../data/site';
+import { publications } from '../data/publications';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = copy[lang];
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const route = (page: string) => `${base}${lang}/${page}`;
+---
+
+<BaseLayout lang={lang} page="home">
+  <section class="hero shell">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">{t.eyebrow}</p>
+      <h1><span>{profile.name[lang]}</span><em>{lang === 'en' ? '李玥璐' : 'Yuelu Li'}</em></h1>
+      <p class="hero-title">{profile.title[lang]}<br />{profile.affiliation[lang]}</p>
+      <p class="hero-intro">{t.intro}</p>
+      <div class="hero-actions">
+        <a class="button button-dark" href={route('publications')}>{t.viewWork}<span>↗</span></a>
+        <a class="text-link" href={`mailto:${profile.email}`}>{t.contact}<span>→</span></a>
+      </div>
+    </div>
+    <div class="portrait-wrap reveal delay-one">
+      <div class="portrait-backdrop"></div>
+      <img src={`${base}images/yuelu-li.jpg`} alt={lang === 'en' ? 'Portrait of Yuelu Li' : '李玥璐个人照片'} width="800" height="1200" />
+      <p class="portrait-caption">HKUST (GZ) · 2026</p>
+    </div>
+    <div class="hero-index" aria-hidden="true">01</div>
+  </section>
+
+  <section class="research-strip">
+    <div class="shell strip-grid">
+      <p>{lang === 'en' ? 'Researching' : '研究方向'}</p>
+      <div class="marquee-line"><span>CREATIVE HCI</span><i>✦</i><span>HUMAN–AI COLLABORATION</span><i>✦</i><span>STORYTELLING</span></div>
+    </div>
+  </section>
+
+  <section class="section shell selected-section">
+    <div class="section-heading">
+      <div><p class="kicker">02 / {lang === 'en' ? 'Research' : '研究'}</p><h2>{t.selected}</h2></div>
+      <p>{t.selectedIntro}</p>
+    </div>
+    <PublicationsList publications={publications.filter((item) => item.featured)} lang={lang} compact />
+    <a class="all-link" href={route('publications')}>{t.allPublications}<span>↗</span></a>
+  </section>
+
+  <section class="contact-band">
+    <div class="shell contact-inner">
+      <p>{lang === 'en' ? 'Open to thoughtful conversations and creative collaborations.' : '期待有启发的交流与创意合作。'}</p>
+      <a href={`mailto:${profile.email}`}>{profile.email}<span>↗</span></a>
+    </div>
+  </section>
+</BaseLayout>
