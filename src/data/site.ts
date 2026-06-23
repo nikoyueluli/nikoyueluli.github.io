@@ -31,7 +31,7 @@ export const copy = {
     publicationsIntro: 'Research spanning human–AI collaboration, storytelling, visualization, and social media.',
     aboutTitle: 'About me',
     aboutIntro: 'My work sits at the intersection of creativity, technology, and human experience.',
-    bio: 'Yuelu is a PhD student in Computational Media and Arts at the Hong Kong University of Science and Technology (Guangzhou). She holds an MPhil degree in Computational Media and Arts from HKUST(GZ) and a bachelor’s degree in Media Communication from Yonsei University in South Korea. Her research centers on creator-centered human-computer interaction, exploring how AI technologies can support narrative and visual content creation, creative decision-making, and storytelling workflows. Her broader research interests include human–AI collaboration, AI applications for creative work, social media content creation, and AIGC.',
+    bio: 'I am a PhD student in Computational Media and Arts at the Hong Kong University of Science and Technology (Guangzhou). I hold an MPhil degree in Computational Media and Arts from HKUST(GZ) and a bachelor’s degree in Media Communication from Yonsei University in South Korea. My research centers on creator-centered human-computer interaction, exploring how AI technologies can support narrative and visual content creation, creative decision-making, and storytelling workflows. My broader research interests include human–AI collaboration, AI applications for creative work, social media content creation, and AIGC.',
     education: 'Education',
     researchInterests: 'Research interests',
     interests: ['Creator-centered HCI', 'Human–AI collaboration', 'Interactive storytelling', 'Visual content creation', 'Social media', 'AIGC'],
